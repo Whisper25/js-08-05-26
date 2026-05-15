@@ -1,22 +1,46 @@
-const bookAuthor = 'King';
-const bookName = 'It';
-const pageCount = 1145;
-// alert('My favorite book:\n"' + bookName + '" by ' + bookAuthor + ' (' + pageCount + ' pages)');
-// My favorite book:
-// "It" by King (1145 pages)
-// конкатенація = +
-// const userNumber = prompt('Enter your number'); - always string
-// alert(typeof userNumber);
-// питаємо в користувача як його звати
-// питаємо назву міста
-
-// і виводимо потім 
-
-// Hi, ____! Nice day :) Welcome in ____!
 // const userName = prompt('Enter your name');
-// const cityName = prompt('Enter your city');    
-// console.log('Hi, ' + userName + '! Nice day :) Welcome to ' + cityName + '!');
-// alert('Hi, ' + userName + '! Nice day :) Welcome to ' + cityName + '!');
-let isRaining = false;
-let cart = null;
-console.log(cart);
+// const isUserName = confirm('Is that your name ' + userName + '?');
+// if (isUserName) {
+//     alert('Hi, ' + userName);
+// } else{
+//     alert('Be more careful next time!');
+// }
+
+// const nyGift = prompt('Що ти хочеш на новий рік?');
+// const isNyGift = confirm('Чи ти впевненний, що хочеш ' + nyGift + '?');
+// if (isNyGift){
+//     alert("Добре, пішов шукати твій подарунок...");
+// } else{
+//     alert('Добре, подумай ще');
+// }
+
+
+
+// ++ - +1
+// -- - -1
+// let amount = 0;
+// if (confirm('Чи Сонце є зіркою?')){
+//     amount++;
+// }
+// if (confirm('Чи людина побувала на Марсі?')){
+//     amount++;
+// }
+// if (!confirm('Чи можна почути звук у космосі?')){
+//     amount++;
+// }
+
+
+// alert('Ваш результат ' + amount);
+
+if (confirm('')){
+    let usd = prompt('');
+    let courseUah = prompt('');
+    let result = usd*courseUah;
+    alert('' +result+'');
+
+} else{
+    let uah = prompt('');
+    let courseUsd = prompt('');
+    let result = uah/courseUsd;
+    alert('' + result+'');
+}
