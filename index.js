@@ -1,70 +1,58 @@
-// const num1 = 5;
-// const num2 = 8;
-// const num3 = 8;
+// // Напишіть програму, яка запитує у користувача кількість книг, які він хоче прочитати за місяць, і за допомогою confirm пропонує розрахувати середню кількість книг на тиждень.
+// const userBookCount = prompt(
+//   "Введіть кількість книг, які ви хочете прочитати за місяць"
+// );
+// console.log(userBookCount);
+// // (5+2)/2 - середнє
+// const WEEKS_IN_MONTH = 4;
+// if (userBookCount === "") {
+//   alert("Invalid value");
+// } else if(userBookCount === null){
+//     alert(':(');
+// } else if (confirm("розрахувати середню кількість книг на тиждень?")) {
+//   console.log(Number(userBookCount) / WEEKS_IN_MONTH);
+// }
 
-// const str1 = '5';
-// const str2 = 'cat'; // 99
-// const str3 = 'dog';
-// const str4 = 'cat';
-// const str5 = 'Cat'; // 67
 
-// console.log(num1>num2); // больше
-// console.log(num1<num2);
-
-// console.log(num1>=num2); 
-// console.log(num1<=num2); 
-
-// console.log(num3>=num2); // больше или равно
-// console.log(num3<=num2);
-
-// console.log(num1==num2); // равно
-// console.log(num3==num2);
-
-// console.log(num1!==num2); // -  не равно
-// console.log(num1!==num2);
-
-// console.log(num1 === str1); //5number '5'string = не равно
-// console.log(str2 === str1); // не равно
-// console.log(str4 === str2); // равно
-// console.log(num1 === Number(str1)); //равно
-// console.log(str5 > str2); // 67<99
-
-// const acessAge = 12;
-// const userAge = prompt('Enter your age');
-// console.log(typeof userAge);
-// if(Number(userAge) >= acessAge){
-//     alert('You can buy the tickets');
+// Напишіть програму, яка запитує у користувача його вік і за confirm перевіряє, чи хоче він дізнатися, скільки днів прожив (приблизно). Якщо так — обчисліть і покажіть результат.
+// const userAge = prompt('Введіть ваш вік');
+// const numUserAge = Number(userAge);
+// const DAYS_IN_YEAR = 365; // константа в житті
+// if(Number.isNaN(numUserAge)){
+//     alert('Not a number');
+// } else if(userAge === null){
+//     alert(':(');
+// } else if(userAge === ''){
+//     alert('Invalid value');
+// } else if(confirm('Чи хочете дізнатися скільки днів ви прожили?')){
+//     const daysCount = numUserAge*DAYS_IN_YEAR;
+//     alert('Ви прожили '+daysCount+' днів')
 // } else{
-//     const yearWait = acessAge - Number(userAge);
-//     alert('You need to wait '+yearWait+" years");
+//     alert(':(');
 // }
 
-// const num1User = prompt('Enter 1st number');
-// const num2User = prompt('Enter 2nd number');
-// const num1 = Number(num1User);
-// const num2 = Number(num2User);
-// if (num1>num2){
-//     alert(num1+' - bigest');
-// } else if (num2 > num1){
-//     alert(num2 + ' - bigest');
-// } else{
-//     alert('Equal');
+// Напишіть програму, яка запитує у користувача розмір знижки (%) та ціну товару. За confirm запропонуйте розрахувати кінцеву ціну зі знижкою. Виведіть результат.
+
+// price /100 *sale - розмір знижки
+// const userPrice = prompt('Введіть ціну')
+// const numPrice = Number(userPrice);
+// const userSalePercent = prompt('Введіть процент знижки');
+// const numSalePercent = Number(userSalePercent);
+// const maxSalePercent = 10;
+// if(numSalePercent>maxSalePercent){
+//     alert('Вибачте, у нас немає такого товару!')
+// } else if(confirm('розрахувати кінцеву ціну зі знижкою?')){
+//     const sale = numPrice/100*numSalePercent;
+//     const result = numPrice - sale;
+//     alert(result);
 // }
 
-// const acessPassword = 'qwe123';
-// const userPassword = prompt('Enter password');
-// if(userPassword === acessPassword){
-//     alert("You're welcome");
-// } else if(userPassword !== acessPassword){
-//     alert('Get out!');
-// }
-
-const userNumber = prompt('Enter your number');
-const number = Number(userNumber);
-if(number>0){
-    alert('positive');
-} else if(number<0){
-    alert('negative');
-} else if(number===0){
-    alert('zero')
+// Напишіть програму, яка запитує у користувача кількість кілометрів для поїздки та витрату пального на 100 км. Використовуйте confirm для розрахунку загальної витрати пального, і виведіть результат через alert.
+const userKM = prompt('кількість кілометрів для поїздки');
+const numKM = Number(userKM);
+const fuelPer100KM = prompt('Введіть витрату пального на 100 км');
+const numFuelPer100KM = Number(fuelPer100KM);
+if(confirm('Хочете розрахунок загальної витрати пального')){
+    const result = numKM/100*numFuelPer100KM;
+    alert('загальна витрата пального '+result);
 }
