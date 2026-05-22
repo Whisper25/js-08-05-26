@@ -1,66 +1,46 @@
-// // remainder % -остача
-// const number = 654;
-// const remainder = number%2;
-// if(remainder === 0){
-//     console.log('even', ' парне');
+// const num1Input = prompt('Enter 1st num');
+// const num2Input = prompt('Enter 2nd num');
+// const num1 = Number(num1Input);
+// const num2 = Number(num2Input);
+
+// if(num1>0 && num2>0){
+//     alert('pos');
+// }else if(num1<0 && num2<0){
+//     alert('neg');
 // }else{
-//     console.log('odd', ' непарне');
-// }
-// const number7 = 654;
-// const remainder7 = number7%7;
-// if(remainder7 === 0){
-//     console.log('кратне 7 ', ' multiply 7');
-// }else{
-//     console.log('не кратне 7 ', ' not multiply 7');
+//     alert('diff');
 // }
 
+// const summaInput = prompt('Enter summa');
+// const summa = Number(summaInput);
+// const minSumma = 1000;
 
-// ! інверсія
-// console.log(!true); // false
-// console.log(!false); //true
+// const delivery = (summa>=minSumma) ? 0 : 50;
 
-// const str ='';
-// console.log(!str); //true
-//false : undefined, null, '' "" ``, 0 +0 -0, NaN
-// else - True
-// console.log(Boolean(undefined));
-// console.log(Boolean(null)); 
+// // if (summa>minSumma){
+// //     delivery=0;
+// // } else{
+// //     delivery=50;
+// // }
+// alert('до сплати = '+(summa + delivery))
 
+// const number = prompt('Enter number');
+// let wordEvenOdd = (Number(number)%2===0) ? 'Even' : 'Odd';
+// alert(number+' - '+wordEvenOdd);
+// const priceTicket = 100;
 // const userAgeInput = prompt('Enter your age');
-// const startSchoolAge = 6;
-// const endSchoolAge = 17;
-
 // const userAge = Number(userAgeInput);
+// const sale = (userAge<18 || userAge>65) ? 10 : 0;
+// const summaCheck = priceTicket - (priceTicket*sale/100)
+// alert(summaCheck);
 
-// if(userAge>=startSchoolAge && userAge<=endSchoolAge){
-//     alert('school');
-// }else{
-//     alert('not school');
-// }
-
-// const userNumInput = prompt('');
-// const userNum = Number(userNumInput);
-// if(userNum%3===0 && userNum%7===0){
-//     alert('win');
-// }else{
-//     alert('lose');
-// }
-
-const userInput = prompt('Enter');
-console.log(userInput);
-const userNumber = Number(userInput);
-console.log(userNumber);
-
-const error1 = userInput === null;
-const error2 = userInput === '';
-const error3 = Number.isNaN(userNumber);
-if(error1 || error2 || error3){
-    alert('Error.\n'+userInput + ' - not a number!');
-}else{
-    if(userNumber>=0 && userNumber <=23){
-        alert("thanks");
-    }else{
-        alert('Error.\n'+userInput + ' - not a number!');
-    }
-}
-
+// const userInput = prompt("Enter");
+// const number = Number(userInput);
+// const module = (number >=0) ? number : -number;
+// alert(module);
+const userInput1 = prompt('Enter 1st side');
+const side1 = prompt(userInput1);
+const userInput2 = prompt('Enter 2nd side');
+const side2 = prompt(userInput2);
+const titleFigure = (userInput1===userInput2) ? 'квадрат' : 'прямокутник';
+alert(titleFigure);
