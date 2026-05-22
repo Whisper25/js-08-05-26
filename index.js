@@ -1,46 +1,48 @@
-// const num1Input = prompt('Enter 1st num');
-// const num2Input = prompt('Enter 2nd num');
-// const num1 = Number(num1Input);
-// const num2 = Number(num2Input);
+// const message = `Введи мову, якою хочеш спілкуватися
+// українська - ua
+// англійська - en
+// іспанська - es
+// польска - pl
+// французька - fr
+// `;
+// debugger
+// const lang = prompt(message);
 
-// if(num1>0 && num2>0){
-//     alert('pos');
-// }else if(num1<0 && num2<0){
-//     alert('neg');
-// }else{
-//     alert('diff');
+// switch (lang) {
+//     case 1:
+//     case ua:
+//         alert('привіт');
+//         break;
+//     case 2:    
+//     case en:    
+//         alert('hi');
+//         break;
+//     case 3:    
+//     case es:        
+//     alert('hola');
+//         break;
+//     case 4:    
+//     case pl:        
+//         alert('czesc');
+//         break;
+//     case 5:    
+//     case en:            
+//         alert('bonjour');
+//         break;    
+//     default:
+//         alert('мова не підтримується');
+//         break;
 // }
-
-// const summaInput = prompt('Enter summa');
-// const summa = Number(summaInput);
-// const minSumma = 1000;
-
-// const delivery = (summa>=minSumma) ? 0 : 50;
-
-// // if (summa>minSumma){
-// //     delivery=0;
-// // } else{
-// //     delivery=50;
-// // }
-// alert('до сплати = '+(summa + delivery))
-
-// const number = prompt('Enter number');
-// let wordEvenOdd = (Number(number)%2===0) ? 'Even' : 'Odd';
-// alert(number+' - '+wordEvenOdd);
-// const priceTicket = 100;
-// const userAgeInput = prompt('Enter your age');
-// const userAge = Number(userAgeInput);
-// const sale = (userAge<18 || userAge>65) ? 10 : 0;
-// const summaCheck = priceTicket - (priceTicket*sale/100)
-// alert(summaCheck);
-
-// const userInput = prompt("Enter");
-// const number = Number(userInput);
-// const module = (number >=0) ? number : -number;
-// alert(module);
-const userInput1 = prompt('Enter 1st side');
-const side1 = prompt(userInput1);
-const userInput2 = prompt('Enter 2nd side');
-const side2 = prompt(userInput2);
-const titleFigure = (userInput1===userInput2) ? 'квадрат' : 'прямокутник';
-alert(titleFigure);
+// if(lang === 'ua'){
+//     alert('привіт');
+// }else if(lang === 'en'){
+//     alert('hi');
+// }else if(lang === 'es'){
+//     alert('hola');
+// }else if(lang === 'pl'){
+//     alert('czesc');
+// }else if(lang === 'fr'){
+//     alert('bonjour');
+// }else{
+//     alert('мова не підтримується');
+// }
