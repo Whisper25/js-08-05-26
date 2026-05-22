@@ -1,58 +1,66 @@
-// // Напишіть програму, яка запитує у користувача кількість книг, які він хоче прочитати за місяць, і за допомогою confirm пропонує розрахувати середню кількість книг на тиждень.
-// const userBookCount = prompt(
-//   "Введіть кількість книг, які ви хочете прочитати за місяць"
-// );
-// console.log(userBookCount);
-// // (5+2)/2 - середнє
-// const WEEKS_IN_MONTH = 4;
-// if (userBookCount === "") {
-//   alert("Invalid value");
-// } else if(userBookCount === null){
-//     alert(':(');
-// } else if (confirm("розрахувати середню кількість книг на тиждень?")) {
-//   console.log(Number(userBookCount) / WEEKS_IN_MONTH);
+// // remainder % -остача
+// const number = 654;
+// const remainder = number%2;
+// if(remainder === 0){
+//     console.log('even', ' парне');
+// }else{
+//     console.log('odd', ' непарне');
+// }
+// const number7 = 654;
+// const remainder7 = number7%7;
+// if(remainder7 === 0){
+//     console.log('кратне 7 ', ' multiply 7');
+// }else{
+//     console.log('не кратне 7 ', ' not multiply 7');
 // }
 
 
-// Напишіть програму, яка запитує у користувача його вік і за confirm перевіряє, чи хоче він дізнатися, скільки днів прожив (приблизно). Якщо так — обчисліть і покажіть результат.
-// const userAge = prompt('Введіть ваш вік');
-// const numUserAge = Number(userAge);
-// const DAYS_IN_YEAR = 365; // константа в житті
-// if(Number.isNaN(numUserAge)){
-//     alert('Not a number');
-// } else if(userAge === null){
-//     alert(':(');
-// } else if(userAge === ''){
-//     alert('Invalid value');
-// } else if(confirm('Чи хочете дізнатися скільки днів ви прожили?')){
-//     const daysCount = numUserAge*DAYS_IN_YEAR;
-//     alert('Ви прожили '+daysCount+' днів')
-// } else{
-//     alert(':(');
+// ! інверсія
+// console.log(!true); // false
+// console.log(!false); //true
+
+// const str ='';
+// console.log(!str); //true
+//false : undefined, null, '' "" ``, 0 +0 -0, NaN
+// else - True
+// console.log(Boolean(undefined));
+// console.log(Boolean(null)); 
+
+// const userAgeInput = prompt('Enter your age');
+// const startSchoolAge = 6;
+// const endSchoolAge = 17;
+
+// const userAge = Number(userAgeInput);
+
+// if(userAge>=startSchoolAge && userAge<=endSchoolAge){
+//     alert('school');
+// }else{
+//     alert('not school');
 // }
 
-// Напишіть програму, яка запитує у користувача розмір знижки (%) та ціну товару. За confirm запропонуйте розрахувати кінцеву ціну зі знижкою. Виведіть результат.
-
-// price /100 *sale - розмір знижки
-// const userPrice = prompt('Введіть ціну')
-// const numPrice = Number(userPrice);
-// const userSalePercent = prompt('Введіть процент знижки');
-// const numSalePercent = Number(userSalePercent);
-// const maxSalePercent = 10;
-// if(numSalePercent>maxSalePercent){
-//     alert('Вибачте, у нас немає такого товару!')
-// } else if(confirm('розрахувати кінцеву ціну зі знижкою?')){
-//     const sale = numPrice/100*numSalePercent;
-//     const result = numPrice - sale;
-//     alert(result);
+// const userNumInput = prompt('');
+// const userNum = Number(userNumInput);
+// if(userNum%3===0 && userNum%7===0){
+//     alert('win');
+// }else{
+//     alert('lose');
 // }
 
-// Напишіть програму, яка запитує у користувача кількість кілометрів для поїздки та витрату пального на 100 км. Використовуйте confirm для розрахунку загальної витрати пального, і виведіть результат через alert.
-const userKM = prompt('кількість кілометрів для поїздки');
-const numKM = Number(userKM);
-const fuelPer100KM = prompt('Введіть витрату пального на 100 км');
-const numFuelPer100KM = Number(fuelPer100KM);
-if(confirm('Хочете розрахунок загальної витрати пального')){
-    const result = numKM/100*numFuelPer100KM;
-    alert('загальна витрата пального '+result);
+const userInput = prompt('Enter');
+console.log(userInput);
+const userNumber = Number(userInput);
+console.log(userNumber);
+
+const error1 = userInput === null;
+const error2 = userInput === '';
+const error3 = Number.isNaN(userNumber);
+if(error1 || error2 || error3){
+    alert('Error.\n'+userInput + ' - not a number!');
+}else{
+    if(userNumber>=0 && userNumber <=23){
+        alert("thanks");
+    }else{
+        alert('Error.\n'+userInput + ' - not a number!');
+    }
 }
+
