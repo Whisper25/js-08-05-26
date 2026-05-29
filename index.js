@@ -1,65 +1,67 @@
-// for (let i=0; i<5; i++) {
-//     console.log(i);
-// }
-
-// let i = 0;
-// while(i<5){
-//     console.log(i);
-//     i++
-// }
-// let i=5;
-// while(i>0){
-//     console.log(i);
-//     i--;
-// }
-// for (let i=5; i>0; i--){
-//     console.log(i);
-// }
-
-// for(let i=10; i<50; i++){
-//     if(i%7===0){
-//         console.log(i);
+// просимо користувача ввести щось до тих пір, доки він не введе щось
+// while (true) {
+//     const userInput = prompt('Enter something');
+//     if(userInput){
+//         alert('Thank you');
+//         break;
 //     }
 // }
-
-// const start = 10;
-// const end = 20;
-// let summa = 0;
-// for(let i=start; i <end; i ++){
-//     console.log(i);
-//     summa += i; //summa = summa + i;
+// null undefined false '' 0 - - - false
+// while (true) {
+//     const userInput = prompt('Enter something');
+//     if(userInput!==null && userInput!==''){
+//         alert('Thank you');
+//             break;
+//         }
 // }
-// console.log(summa);
 
-// const start = 5;
-// const end = 10;
-// let mult = 1;
-// for(let i=start; i <end; i ++){
-//    mult*=i
+// kористувач вводить початкове значеня - число
+// потім він вводить знаки або + або -
+// ми залежно від цих знаків робимо інкремент або дікремент
+// це все продовжуються до того доки користувач не натисне відміну
+// let userNumInput = prompt("Enter number");
+// while (
+//   userNumInput === null ||
+//   userNumInput === "" ||
+//   Number.isNaN(Number(userNumInput)) ||
+//   Number.isSafeInteger(Number(userNumInput)) === false
+// ) {
+//   userNumInput = prompt("Enter number");
 // }
-// console.log(mult);
-
-// const start = 0;
-// const end = 10;
-// let summa =0;
-// let mult = 1;
-// for(let i=start; i <= end; i ++){
-//    if(i%2===0){
-//     summa+=i;
-//    } else{
-//     mult*=i;
-//    }
+// let userNum = Number(userNumInput);
+// while (true) {
+//   const userSymb = prompt("Enter + or -");
+//   if (userSymb === null) {
+//     break;
+//   }
+//   switch (userSymb) {
+//     case "+":
+//       userNum++;
+//       break;
+//     case "-":
+//       userNum--;
+//       break;
+//     default:
+//       alert("+ or -");
+//       break;
+//   }
 // }
-// console.log('mult = ' + mult + '\nsumma= ' + summa);
-
-
-const pass = '123qwe';
-maxTry = 3;
-for(let i=0; i<maxTry; i++){
-    const userInputPass = prompt('Enter password');
-    if(userInputPass === password){
-        alert('Welcome');
-        break;
-    }
+// alert(userNum);
+let counter = 0;
+while (true) {
+  const userNumInput = prompt("Enter positive number");
+  if (
+    userNumInput === null ||
+    userNumInput === "" ||
+    Number.isNaN(Number(userNumInput)) ||
+    Number.isSafeInteger(Number(userNumInput)) === false ||
+    Number(userNumInput)<0
+  ) {
+    continue;
+  }
+  counter++;
+  if(counter>=3){
+    break;
+  }
 }
-alert('залишилось ' + (maxTry - i -1)+ ' спроби');
+console.log(counter);
