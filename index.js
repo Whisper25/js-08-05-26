@@ -1,115 +1,86 @@
-
-/**
- * 
- * @param {number} number1 
- * @param {number} number2 
- * @returns {number}
- */
-function addTwoNumbers(number1=0, number2=0){
-  const summa = number1+number2;
-  return summa;
+// функція яка переводить кілометри в метри
+function kmToM(km) {
+  return km * 1000;
 }
-const result = addTwoNumbers(4,5);
-console.log(result);
-console.log(addTwoNumbers(4,9));
-console.log(addTwoNumbers());
+console.log(kmToM(6));
 
-/**
- * 
- * @param {number} logSquareSide 
- * @returns {number}
- */
-function getSquareArea(SquareSide=5){
-  const area = SquareSide*SquareSide;
-  return area;
+// функція повинна повертати true якщо температура нижче 0, інакше - false
+function isBelowZero(temperature) {
+  return temperature < 0;
 }
-console.log(addTwoNumbers(4));
+console.log(isBelowZero(-17));
 
-/**
- * 
- * @param {number} start 
- * @param {number} end 
- * @returns {number}
- */
-function getSumOfRange(start, end){
-  let summa = 0;
-  for(let i=start; i<end; i++){
-    summa+=i;
+// функція приймає три числа і повертає true якщо всі три числа однакові,  інакше - false
+function isThreeSame(num1, num2, num3) {
+  return num1 === num2 && num2 === num3;
+}
+console.log(isThreeSame(5, 8, 1));
+
+// функція приймає три числа і повертає слово equal якщо всі три числа однакові,  інакше - not equal
+
+function isThreeSame1(num1, num2, num3) {
+  return num1 === num2 && num2 === num3 ? "equal" : "not equal";
+}
+console.log(isThreeSame1(5, 8, 1));
+
+// функція приймає номер дня тижня і повертає слово
+// weekend - якщо 6 або 7
+// workday - в усіх інших випадках
+
+function dayOftheWeek(num) {
+  return num === 6 || num === 7 ? "weekend" : "workday";
+}
+console.log(dayOftheWeek(5));
+
+// функція приймає годину дня
+// і повертає
+// від 6 до 12 - morgan
+// від 12 до 18 - tag
+// від 18 до 22 - abend
+// від 0 до 6 або від 22 до 24 - night
+// - wrong data
+
+function getDayTime(hour) {
+  if (hour >= 6 && hour < 12) {
+    return "morgan";
   }
-  return summa;
-}
-console.log(getSumOfRange(1, 20));
-
-//
-
-function getNumSign(num){
-  if(num>0){
-    return 'positive';
+  if (hour >= 12 && hour < 18) {
+    return "tag";
   }
-  if(num<0){
-    return 'negative';
+  if (hour >= 18 && hour < 22) {
+    return "abend";
   }
-  return "zero";
-}
-console.log(getNumSign(5));
-console.log(getNumSign(-5));
-console.log(getNumSign(0));
-
-/**
- * 
- * @param {number} num 
- * @returns {string}
- */
-function isEven(num){
-  if(num%2===0){
-    return 'even';
+  if ((hour >= 0 && hour < 6) || (hour >= 22 && hour < 24)) {
+    return "night";
   }
-  return 'odd';
+  return "wrong data";
 }
-console.log(isEven(4));
-console.log(isEven(5));
+console.log(getDayTime(23));
 
-
-/**
- * 
- * @param {number} num 
- * @returns {string}
- */
-function isEven2(num){
-  return num%2===0 ? 'even' : 'odd';
-}
-console.log(isEven(4));
-console.log(isEven(5));
-
-console.log(isEven2(4));
-console.log(isEven2(5));
-
-
-/**
- * 
- * @param {number} num1 
- * @param {number} num2 
- * @returns {string}
- */
-function getBigger(num1,num2){
-  return num1>=num2 ? num1 : num2;
-}
-console.log(getBigger(5,6));
-
-/**
- * 
- * @param {number} num1 
- * @param {number} num2 
- * @param {number} num3 
- * @returns {string}
- */
-function getSmaller(num1, num2, num3){
-  if(num1<num2 && num1<num3){
-    return num1;
+function inputNumber() {
+  while (true) {
+    const userInput = prompt("Enter a number");
+    if (
+      userInput === null ||
+      userInput === "" ||
+      Number.isNaN(Number(userInput))
+    ) {
+      continue;
+    }
+    return Number(userInput);
   }
-  if(num2<num3 && num2<num1){
-    return num2;
-  }
-  return num3;
 }
-console.log(getSmaller(4, 2, 8));
+// console.log(inputNumber());
+
+// функція приймає ціну піци і кількість друзів і повертає скільки повинен заплатити кожен з них
+
+function splitPizzaBill(price, friends){
+  return Math.ceil(price/friends);
+}
+console.log(splitPizzaBill(100, 3));
+
+// функція перевіряє чи два числа закінчуються однаковою цифрою
+function isEqualLastDigital(num1, num2){
+  return num1%10===num2%10;
+}
+console.log(isEqualLastDigital(452, 87));
