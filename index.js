@@ -1,47 +1,70 @@
-/**
- * 
- * @param {number} year 
- * @returns {boolean}
- */
-function checkCentenary(year=2024){
-  return (year%100===0);
+const firstNameUser ='Brad';
+const lastNameUser = 'Pitt';
+const ageUser = 32;
+const genderUser = 'male';
+const user1 ={
+  firstName: 'Brad',
+  lastName: 'Pitt',
+  age: 32,
+  isMale:true,
 }
-console.log(checkHundred(100));
+console.log(user1);
+console.log(user1.isMale);
+const book = {
+  title: 'It',
+  author: 'Steven King',
+  yearCreate: 1982,
+  isReading: false,
+  getInfo(){
+    return `${this.author} '${this.title}', ${this.yearCreate}`;
+  },
+  "two words": 'value',
+}
+console.log(book["two words"]);
+console.log(book.getInfo());
+console.log(book);
+const object = new Object({key:12});
+console.log(object);
+book.pages = 845;
+
+delete book.pages;
+
+//
+const phone = {
+  brand: 'Sony',
+  model: 'XP',
+  price: 560,
+  getDetails(){
+    return `${this.brand} ${this.model} costs $${this.price} color: ${this.color}`;
+  },
 
 
-/**
- * @param {number}
- * @returns {number}
- */
-const ZERO_CEL_FAH = 9/5;
-const CELSIUS_FAHRENHEIT = 33.8;
-function convertCelsiusFahrenheit(cel){
-  return cel*CELSIUS_FAHRENHEIT+ZERO_CEL_FAH;
-}
-/**
- * 
- * @param {number} num1 
- * @param {number} num2 
- * @returns {boolean}
- */
-function checkMultiple(num1, num2){
-  return (num1%num2===0);
+};
+console.log(phone.getDetails());
+phone.color = 'red';
+console.log(phone.getDetails());
+
+
+const country = {
+  name: 'Germany',
+  capital:'Berlin',
+  area:357.022,
+  population:83.6,
+  getDescribe(){
+    return `The ${this.capital} is capital of ${Germany}`;
+  },
+  getDestination(){
+    return this.population/this.area;
+  },
 }
 
-/**
- * 
- * @param {number} height 
- * @param {number} base 
- * @returns {number}
- */
-function getAreaOfTriangle(height, base){
-  return (base*height)/2;
-}
-
-function getFinalCoast(coast, percent){
-  return coast + (coast*percent/100);
-}
-
-function isEvenDifferenceBetweenNums(num1, num2){
-  return(num1 - num2)%2===0;
+const rectangle ={
+  width:10,
+  height:5,
+  getPerimetr(){
+    return (this.width+this.height)*2
+  },
+  getArea(){
+    return this.width*this.height;
+  }
 }
