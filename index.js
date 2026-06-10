@@ -1,56 +1,81 @@
+// Об'єкт game
+// Властивості:
+// name
+// genre
+// hoursPlayed
+// Метод:
+// getProgress → "You have played [name] for [hoursPlayed] hours."
 
-/**
- * 
- * @param {string} name 
- * @param {number} age 
- */
-function User(name, age){
-  this.name = name;
-  this.age = age;
-  this.getInfo = function(){
-    return `${this.name} is ${this.age} years old`
-  }
-}
-const user1 = new User('Fred', 12);
-console.log(user1.getInfo());
+const game = {
+  name: "Minecraft",
+  genre: "Sandbox",
+  hoursPlayed: 256,
+  getProgress() {
+    return `You have played ${this.name} for ${this.hoursPlayed} hours.`;
+  },
+};
+console.log(game.getProgress());
 
-function Phone(brand, model, price){
-  this.brand = brand;
-  this.model = model;
-  this.price = price;
-  this.getDetails=function(){
-    return `${this.brand} ${this.model} coasts $${this.price}`;
-  }
-}
-const phone1 = new Phone('Xiaomi','M12', '250');
-console.log(phone1.getInfo());
+// Об'єкт laptop — ноутбук для навчання та ігор
+// Властивості:
+// brand
+// ram (в гігабайтах)
+// storage (в гігабайтах)
+// Метод: getTotalMemory → Повертає суму RAM і storage.
 
+const laptop = {
+  brand: "HP",
+  ram: 16,
+  storage: 300,
+  getTotalMemory() {
+    return this.ram + this.storage;
+  },
+  toString() {
+    return `laptop ${this.brand}`;
+  },
+};
+console.log(laptop.getTotalMemory());
+// alert(laptop);
 
-function Movie(title, director, releaseYear){
-  this.title = title;
-  this.director = director;
-  this.releaseYear = releaseYear;
-  this.getPoster = function(){
-    return `${this.title} directed by ${this.director} in ${releaseYear}`;
-  }
-  this.toString = function(){
-    return this.title;
-  }
-}
-const movie1 = new Phone('movie','director', 'year');
-console.log(movie1);
-console.log(movie1.toString());
+// Функція конструктор для Сircle — коло
+// Властивості: radius
+// Методи:
+// getPerimeter → 2 * π * radius
+// getArea → π * radius²
 
-
-function City(name, country, population){
-  this.name=name;
-  this.country =country;
-  this.population=population;
-  this.toString=function(){
-    return `City ${name} is in country ${country}`;
+function Circle(radius) {
+  this.radius = radius;
+  this.getPerimeter = function () {
+    return 2 * Math.PI * this.radius;
   };
-  this.getFullInfo = function(){
-    return `City ${name} is in country ${country} with population ${population}`;
-  }
+  this.getArea = function () {
+    return Math.PI * (this.radius ** 2);
+  };
 }
-const city1 = new City('name','country', 'population');
+const circle1 = new Circle(10);
+console.log(circle1);
+circle1.radius=6;
+console.log(circle1.getArea());
+console.log(circle1.getPerimeter());
+
+// Функція конструктор  playList — плейлист
+// Властивості:
+// totalSongs
+// listenSongs
+// Метод:
+// getListenSongsPercent → Повертає у відсотках кількість прослуханих пісень
+// getRestSongsPercent → Повертає у відсотках кількість  пісень, що лишилося прослухати
+
+function PlayList(totalSongs=10, listenSongs=6){
+  this.totalSongs=totalSongs;
+  this.listenSongs=listenSongs;
+  this.getListenSongsPercent = function(){
+    return (this.listenSongs*100)/this.totalSongs;
+  };
+  this.getRestSongsPercent = function(){
+    return 100-this.getListenSongsPercent();
+  };
+}
+const playList1 = new PlayList();
+console.log(playList1.getListenSongsPercent());
+console.log(playList1.getRestSongsPercent());
