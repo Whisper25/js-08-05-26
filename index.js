@@ -1,86 +1,47 @@
-// функція яка переводить кілометри в метри
-function kmToM(km) {
-  return km * 1000;
+/**
+ * 
+ * @param {number} year 
+ * @returns {boolean}
+ */
+function checkCentenary(year=2024){
+  return (year%100===0);
 }
-console.log(kmToM(6));
+console.log(checkHundred(100));
 
-// функція повинна повертати true якщо температура нижче 0, інакше - false
-function isBelowZero(temperature) {
-  return temperature < 0;
+
+/**
+ * @param {number}
+ * @returns {number}
+ */
+const ZERO_CEL_FAH = 9/5;
+const CELSIUS_FAHRENHEIT = 33.8;
+function convertCelsiusFahrenheit(cel){
+  return cel*CELSIUS_FAHRENHEIT+ZERO_CEL_FAH;
 }
-console.log(isBelowZero(-17));
-
-// функція приймає три числа і повертає true якщо всі три числа однакові,  інакше - false
-function isThreeSame(num1, num2, num3) {
-  return num1 === num2 && num2 === num3;
+/**
+ * 
+ * @param {number} num1 
+ * @param {number} num2 
+ * @returns {boolean}
+ */
+function checkMultiple(num1, num2){
+  return (num1%num2===0);
 }
-console.log(isThreeSame(5, 8, 1));
 
-// функція приймає три числа і повертає слово equal якщо всі три числа однакові,  інакше - not equal
-
-function isThreeSame1(num1, num2, num3) {
-  return num1 === num2 && num2 === num3 ? "equal" : "not equal";
+/**
+ * 
+ * @param {number} height 
+ * @param {number} base 
+ * @returns {number}
+ */
+function getAreaOfTriangle(height, base){
+  return (base*height)/2;
 }
-console.log(isThreeSame1(5, 8, 1));
 
-// функція приймає номер дня тижня і повертає слово
-// weekend - якщо 6 або 7
-// workday - в усіх інших випадках
-
-function dayOftheWeek(num) {
-  return num === 6 || num === 7 ? "weekend" : "workday";
+function getFinalCoast(coast, percent){
+  return coast + (coast*percent/100);
 }
-console.log(dayOftheWeek(5));
 
-// функція приймає годину дня
-// і повертає
-// від 6 до 12 - morgan
-// від 12 до 18 - tag
-// від 18 до 22 - abend
-// від 0 до 6 або від 22 до 24 - night
-// - wrong data
-
-function getDayTime(hour) {
-  if (hour >= 6 && hour < 12) {
-    return "morgan";
-  }
-  if (hour >= 12 && hour < 18) {
-    return "tag";
-  }
-  if (hour >= 18 && hour < 22) {
-    return "abend";
-  }
-  if ((hour >= 0 && hour < 6) || (hour >= 22 && hour < 24)) {
-    return "night";
-  }
-  return "wrong data";
+function isEvenDifferenceBetweenNums(num1, num2){
+  return(num1 - num2)%2===0;
 }
-console.log(getDayTime(23));
-
-function inputNumber() {
-  while (true) {
-    const userInput = prompt("Enter a number");
-    if (
-      userInput === null ||
-      userInput === "" ||
-      Number.isNaN(Number(userInput))
-    ) {
-      continue;
-    }
-    return Number(userInput);
-  }
-}
-// console.log(inputNumber());
-
-// функція приймає ціну піци і кількість друзів і повертає скільки повинен заплатити кожен з них
-
-function splitPizzaBill(price, friends){
-  return Math.ceil(price/friends);
-}
-console.log(splitPizzaBill(100, 3));
-
-// функція перевіряє чи два числа закінчуються однаковою цифрою
-function isEqualLastDigital(num1, num2){
-  return num1%10===num2%10;
-}
-console.log(isEqualLastDigital(452, 87));
