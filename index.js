@@ -1,81 +1,71 @@
-// Об'єкт game
-// Властивості:
-// name
-// genre
-// hoursPlayed
-// Метод:
-// getProgress → "You have played [name] for [hoursPlayed] hours."
-
-const game = {
-  name: "Minecraft",
-  genre: "Sandbox",
-  hoursPlayed: 256,
-  getProgress() {
-    return `You have played ${this.name} for ${this.hoursPlayed} hours.`;
-  },
-};
-console.log(game.getProgress());
-
-// Об'єкт laptop — ноутбук для навчання та ігор
-// Властивості:
-// brand
-// ram (в гігабайтах)
-// storage (в гігабайтах)
-// Метод: getTotalMemory → Повертає суму RAM і storage.
-
-const laptop = {
-  brand: "HP",
-  ram: 16,
-  storage: 300,
-  getTotalMemory() {
-    return this.ram + this.storage;
-  },
-  toString() {
-    return `laptop ${this.brand}`;
-  },
-};
-console.log(laptop.getTotalMemory());
-// alert(laptop);
-
-// Функція конструктор для Сircle — коло
-// Властивості: radius
-// Методи:
-// getPerimeter → 2 * π * radius
-// getArea → π * radius²
-
-function Circle(radius) {
-  this.radius = radius;
-  this.getPerimeter = function () {
-    return 2 * Math.PI * this.radius;
-  };
-  this.getArea = function () {
-    return Math.PI * (this.radius ** 2);
-  };
+const obj = {};
+console.log(obj);
+function User(name,age,isMale){
+  this.name=name;
+  this.age=age;
+  this.isMale=isMale;
+  
 }
-const circle1 = new Circle(10);
-console.log(circle1);
-circle1.radius=6;
-console.log(circle1.getArea());
-console.log(circle1.getPerimeter());
-
-// Функція конструктор  playList — плейлист
-// Властивості:
-// totalSongs
-// listenSongs
-// Метод:
-// getListenSongsPercent → Повертає у відсотках кількість прослуханих пісень
-// getRestSongsPercent → Повертає у відсотках кількість  пісень, що лишилося прослухати
-
-function PlayList(totalSongs=10, listenSongs=6){
-  this.totalSongs=totalSongs;
-  this.listenSongs=listenSongs;
-  this.getListenSongsPercent = function(){
-    return (this.listenSongs*100)/this.totalSongs;
-  };
-  this.getRestSongsPercent = function(){
-    return 100-this.getListenSongsPercent();
-  };
+const UserPrototype = {
+  getInfo(){
+    return`${this.name} is ${this.age} years old`;
+  },
+  getGender(){
+    return this.isMale ? 'male' : 'female';
+  }
 }
-const playList1 = new PlayList();
-console.log(playList1.getListenSongsPercent());
-console.log(playList1.getRestSongsPercent());
+User.prototype=new UserPrototype;
+const user1=new User('Alex',20,true);
+console.log(user1);
+console.log(user1.getGender);
+
+
+/**
+ * 
+ * @param {Number} r 
+ */
+function Circle(r){
+  this.r=r;
+}
+const CirclePrototype={
+  getArea(){
+    return Math.PI*r*r;
+  },
+  getPerimeter(){
+    2*Math.PI*r;
+  },
+  getDiametr(){
+    2*r;
+  }
+}
+Circle.prototype=new CirclePrototype;
+
+const user = {
+  name:'bred',
+}
+const userProto={
+  say(){
+    return`my name is ${this.name}`
+  },
+  walk(){
+    return `im walking`;
+  }
+}
+const student = {
+  name:'neo',
+}
+user.__proto__ = userProto;
+student.__proto__ = userProto;
+
+
+
+const event={
+  title:'Title',
+}
+const eventProto={
+  showTitle(){
+    return `${this.showTitle}`;
+  }
+}
+event.__proto__=eventProto;
+log.console(event.showTitle());
