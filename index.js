@@ -1,71 +1,63 @@
-const obj = {};
-console.log(obj);
-function User(name,age,isMale){
-  this.name=name;
-  this.age=age;
-  this.isMale=isMale;
-  
-}
-const UserPrototype = {
-  getInfo(){
-    return`${this.name} is ${this.age} years old`;
-  },
-  getGender(){
-    return this.isMale ? 'male' : 'female';
-  }
-}
-User.prototype=new UserPrototype;
-const user1=new User('Alex',20,true);
-console.log(user1);
-console.log(user1.getGender);
+// const colors =[
+//   'red', 'orange', 'yellow', 'green'
+// ]
+// console.log(colors);
+// console.log(colors.length);
+// console.log(colors[0]);
+// colors[8]='white';
+
+// const numbers = new Array[6,25,13,41];
+// console.log(numbers);
+// console.log(numbers.length);
+
+//
+
+const array1=[3] // -- 0 = 3
+console.log(array1);
+
+const array2=new Array(3); //-- length = 3
+console.log(array2);
+
+const array3 = new Array(3,4);
+console.log(array3);
+
+//
+
+const names = [
+  'Neo', 'Alex', 'Bred',
+]
+console.log(names.length);
+
+names.push(
+  'Anna', 'Maria', 'Olga'
+); //+last
+names.unshift('Max', 'Fred'); // +first
+
+const delLastName=names.pop(2); // - last
+console.log(delLastName);
+
+const delFirstName=names.shift(); // - first
+console.log(delFirstName);
+
+console.log(names);
 
 
-/**
- * 
- * @param {Number} r 
- */
-function Circle(r){
-  this.r=r;
-}
-const CirclePrototype={
-  getArea(){
-    return Math.PI*r*r;
-  },
-  getPerimeter(){
-    2*Math.PI*r;
-  },
-  getDiametr(){
-    2*r;
-  }
-}
-Circle.prototype=new CirclePrototype;
-
-const user = {
-  name:'bred',
-}
-const userProto={
-  say(){
-    return`my name is ${this.name}`
-  },
-  walk(){
-    return `im walking`;
-  }
-}
-const student = {
-  name:'neo',
-}
-user.__proto__ = userProto;
-student.__proto__ = userProto;
+//
 
 
+const seasons=[
+  'winter', 'spring', 'summer', 'autumn',
+]
+seasons.push('summer');
+seasons.shift();
+seasons.push('winter');
+seasons.unshift('autumn');
+seasons.pop();
+console.log(seasons);
 
-const event={
-  title:'Title',
-}
-const eventProto={
-  showTitle(){
-    return `${this.showTitle}`;
-  }
-}
-event.__proto__=eventProto;
-log.console(event.showTitle());
+const fruits=[]
+fruits.push('apple', 'orange', 'coconut');
+fruits.unshift('mango', 'banana');
+fruits.pop(2);
+fruits.unshift('orange', 'coconut');
+console.log(fruits);
