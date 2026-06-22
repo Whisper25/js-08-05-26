@@ -1,48 +1,78 @@
-// запитай в користувача нову марку машини
-// якщо така марка вже є - виведи "Така марка вже є"
-// якщо не має - виведи всі марки і їх позиції в масиві, і спитай після якої позиції додати нову марку в масив
+//function declaration
+function logWord1(word) {
+  console.log(word);
+}
+logWord1("text");
 
-// const cars = ['bmw', 'audi', 'ford']
-// const userCar = prompt('enter a car mark', 'tesla');
-// if(cars.includes(userCar)){
-//   console.log("Така марка вже є");
-// }else{
-//   for (let index = 0; index < cars.length; index++) {
-//     console.log(index, cars[index]);
-//   }
-//   const userIndex = prompt('введи індекс після якого треба додати нову марку');
-//   cars.splice(Number(userIndex)+1, 0, userCar);
-// }
-// console.log(cars);
+//function expression
+const logWord2 = function (word) {
+  console.log(word);
+};
+logWord2("new text");
 
-// Масив seats = ['free', 'taken', 'free', 'free', 'taken'].
-// За допомогою методів indexOf і lastIndexOf:
-// Займи перше вільне місце
-// Видали останнє зайняте
-// const seats = ['free', 'taken', 'free', 'free', 'taken'];
-// const firstFree = seats.indexOf('free');
-// // seats.splice(firstFree, 1, 'taken');
-// seats[firstFree]='taken';
-// const LastTaken = seats.lastIndexOf('taken');
-// seats.splice(LastTaken, 1);
-// console.log(seats);
+//arrow function
+const logWord3 = (word) => {
+  console.log(word);
+  return 12;
+};
+logWord3("3 word");
 
-const numbers = [4, 5, 9, 23, 83, 6, 88];
-// for (let index = 0; index < numbers.length; index++) {
-//   if(numbers[index]%2===1){
-//     console.log(numbers[index]);
-//   }  
+// const mult =(a,b)=>{
+//     return a*b;
 // }
-// for (const key in numbers) {
-//   console.log(numbers[key]);
-// }
-// for (const element of numbers) {
-//   console.log(element);
-// }
-// перемести число з другої позиції на останню
-// const del2ndNum = numbers.splice(2, 1).at(0);
-// numbers.push(del2ndNum);
-// console.log(numbers);
-// const lastNum = numbers.pop();
-numbers.unshift(numbers.pop());
+//=
+const mult = (a, b) => a * b;
+
+console.log(mult(4, 6));
+const getPerimetr = (side) => side * 4;
+const isAdult = (age, AGE_ADULT = 18) =>
+  age >= AGE_ADULT ? "adult" : "not adult";
+console.log(isAdult(9));
+
+const site = {
+  title: "my site",
+  headers: ["qwe1", "qwe2", "qwe3"],
+  showHeader() {
+    this.headers.forEach(function (elem) {
+      console.log(elem);
+    });
+  },
+  // showHeaderAndTitle(){
+  //     this.headers.forEach(function(elem){
+  //         console.log(elem, this.title);
+  //     })
+  // }
+  showHeaderAndTitle() {
+    this.headers.forEach((elem) => {
+      console.log(elem, this.title);
+    });
+  },
+};
+site.showHeader();
+site.showHeaderAndTitle();
+
+// forEach
+
+const numbers = [2, 4, 9, 3, 7, 6];
+numbers.forEach((number, index, array) => {
+  console.log(number, index, array);
+});
+numbers.forEach((number) => {
+  console.log(number, number ** 2);
+});
+
+// map
+const newArrayNumbers = numbers.map((elem) => elem * elem);
+console.log(newArrayNumbers);
+console.log(numbers);
+
+//filter
+const newEvenNumbers = numbers.filter((item) => item % 2 === 0);
+console.log(newEvenNumbers);
+console.log(numbers);
+
+//reduce
+
+const summa = numbers.reduce((accumulator, number) => accumulator + number);
+console.log(summa);
 console.log(numbers);
