@@ -1,78 +1,50 @@
-//function declaration
-function logWord1(word) {
-  console.log(word);
+const numbers = [5, 10, 15, 20, 25, 30, 35];
+console.log(numbers);
+//
+const lastNumber = numbers.pop();
+
+numbers.unshift(lastNumber);
+console.log(numbers);
+//
+const firstNumber = numbers.shift();
+numbers.push(lastNumber);
+console.log(numbers);
+//
+numbers.splice(2, 3, 55);
+console.log(numbers);
+//
+if (
+  numbers.indexOf(10) === numbers.lastIndexOf(10) &&
+  numbers.indexOf(10) !== -1 &&
+  numbers.lastIndexOf(10) !== -1
+) {
+  console.log("one time");
+} else {
+  console.log("more times");
 }
-logWord1("text");
-
-//function expression
-const logWord2 = function (word) {
-  console.log(word);
-};
-logWord2("new text");
-
-//arrow function
-const logWord3 = (word) => {
-  console.log(word);
-  return 12;
-};
-logWord3("3 word");
-
-// const mult =(a,b)=>{
-//     return a*b;
-// }
-//=
-const mult = (a, b) => a * b;
-
-console.log(mult(4, 6));
-const getPerimetr = (side) => side * 4;
-const isAdult = (age, AGE_ADULT = 18) =>
-  age >= AGE_ADULT ? "adult" : "not adult";
-console.log(isAdult(9));
-
-const site = {
-  title: "my site",
-  headers: ["qwe1", "qwe2", "qwe3"],
-  showHeader() {
-    this.headers.forEach(function (elem) {
-      console.log(elem);
-    });
-  },
-  // showHeaderAndTitle(){
-  //     this.headers.forEach(function(elem){
-  //         console.log(elem, this.title);
-  //     })
-  // }
-  showHeaderAndTitle() {
-    this.headers.forEach((elem) => {
-      console.log(elem, this.title);
-    });
-  },
-};
-site.showHeader();
-site.showHeaderAndTitle();
-
-// forEach
-
-const numbers = [2, 4, 9, 3, 7, 6];
-numbers.forEach((number, index, array) => {
-  console.log(number, index, array);
+//
+numbers.forEach((item) => {
+  console.log(item * 3);
 });
-numbers.forEach((number) => {
-  console.log(number, number ** 2);
-});
+//
+const newNums = numbers.map((elem) => elem * 10);
+console.log(newNums);
+//
+const newNumsPlus5 = numbers.map((elem) => elem + 5);
+console.log(newNumsPlus5);
+//
+const newFilterNumbers = numbers.filter((elem) => elem > 20);
+console.log(newFilterNumbers);
+//
+const newFilterNumbers2 = numbers.filter((elem) => elem % 6 === 0);
+console.log(newFilterNumbers2);
+//
 
-// map
-const newArrayNumbers = numbers.map((elem) => elem * elem);
-console.log(newArrayNumbers);
-console.log(numbers);
-
-//filter
-const newEvenNumbers = numbers.filter((item) => item % 2 === 0);
-console.log(newEvenNumbers);
-console.log(numbers);
-
-//reduce
-
-const summa = numbers.reduce((accumulator, number) => accumulator + number);
-console.log(summa);
-console.log(numbers);
+while (true) {
+  const userInput = prompt("enter number");
+const userNumber = Number(userInput);
+if (numbers.includes(userNumber)) {
+  console.log("your number is in the massive");
+  break;
+}
+}
